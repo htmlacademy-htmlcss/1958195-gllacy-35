@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Фаррух Алимов](https://up.htmlacademy.ru/htmlcss/35/user/1958195).
-* Наставник: `Неизвестно`.
+* Наставник: [Олег Цыганов](https://htmlacademy.ru/profile/olegtsyganov).
 
 ---
 
