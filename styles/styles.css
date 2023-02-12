@@ -994,7 +994,6 @@ body {
 
 .card__item:hover .card__img{
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px 0 rgba(45, 52, 64, 0.1);
 }
 
 .card__link {
@@ -1023,6 +1022,7 @@ body {
   height: 168px;
   background-color: transparent;
   margin-bottom: 16px;
+  box-shadow: 0 4px 12px 0 rgba(45, 52, 64, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -1653,6 +1653,15 @@ body {
   color: #2d3440;
 }
 
+.content-header__breadcrumbs-link:hover {
+}
+
+.content-header__breadcrumbs-link:focus {
+}
+
+.content-header__breadcrumbs-link:active {
+}
+
 /* --------------   Каталог Фильтр    -------------- */
 
 .filter {
@@ -1661,7 +1670,7 @@ body {
 
 .filter__line-group {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .filter__line-group:not(:last-child) {
@@ -1701,17 +1710,27 @@ body {
   -moz-appearance: none;
   -o-appearance: none;
   width: 195px;
+  border: 2px solid transparent;
   font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   appearance: none;
   background: rgba(252, 252, 252, 0.3) url("../images/icons/select-arrow.svg") no-repeat right 16px center;
-  padding: 8px 40px 8px 14px;
+  padding: 6px 40px 6px 14px;
 }
 
 .filter__sort::-ms-expand {
   display: none;
+}
+
+.filter__sort:hover {
+  background-color: #fdd6e0;
+}
+
+.filter__sort:focus-visible {
+  border: 2px solid #fcfcfc;
+  outline: none;
 }
 
 .filter__price {
@@ -1750,6 +1769,7 @@ body {
   background-color: #2d3440;
   top: 50%;
   transform: translateY(-50%);
+  transition: background-color 0.3s ease;
 }
 
 .filter__price-button::before {
@@ -1763,6 +1783,28 @@ body {
   background-color: #fcfcfc;
 }
 
+.filter__price-button:hover {
+  background-color: #fcfcfc;
+}
+
+.filter__price-button:hover::before {
+  background-color: #2d3440;
+}
+
+.filter__price-button:focus {
+  background-color: #fcfcfc;
+  outline: 2px solid #2d3440;
+}
+
+.filter__price-button:focus::before {
+  background-color: #2d3440;
+}
+
+.filter__price-button:active,
+.filter__price-button:active::before {
+  background-color: #2d3440;
+}
+
 .filter__price-button_min {
   left: 23px;
 }
@@ -1773,6 +1815,7 @@ body {
 
 .filter__list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .filter__fat-content {
@@ -1844,22 +1887,189 @@ body {
   background: url("../images/icons/checkbox-checked.svg") no-repeat;
 }
 
+.filter__control:hover .filter__mark {
+  border-color: #fcfcfc;
+}
+
+.filter__control:hover .filter__input[type="radio"]:checked + .filter__mark::before {
+  background-color: #fcfcfc;
+}
+
+.filter__control:hover .filter__input[type="checkbox"] + .filter__mark {
+  background: url("../images/icons/checkbox-white.svg") no-repeat;
+}
+
+.filter__control:hover .filter__input[type="checkbox"]:checked + .filter__mark {
+  background: none;
+}
+
+.filter__control:hover .filter__input[type="checkbox"]:checked + .filter__mark::before {
+  background: url("../images/icons/checkbox-checked-white.svg") no-repeat;
+}
+
+.filter__control:focus-within {
+  outline: 2px solid #2d3440;
+  outline-offset: 2px;
+  border-radius: 5px;
+}
+
 .filter__label {
   font-size: 14px;
   line-height: 20px;
 }
 
 .filter__button {
+  margin-bottom: 2px;
+  align-self: flex-end;
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
   color: #2d3440;
-  border: 2px solid #fcfcfc;
+  border: none;
+  outline: 2px solid #fcfcfc;
   border-radius: 20px;
   background-color: rgba(252, 252, 252, 0.3);
   padding: 8px 53px;
+  transition: background-color 0.3s ease;
+}
+
+.filter__button:hover {
+  background-color: #fcfcfc;
+  outline-color: rgba(252, 252, 252, 0.3);
+}
+
+.filter__button:focus {
+  outline-color: #2d3440;
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.filter__button:active {
+  outline: none;
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.filter__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.filter__button:disabled:hover {
+  outline: 2px solid #fcfcfc;
+  background-color: rgba(252, 252, 252, 0.3);
 }
 
 /* --------------   Каталог Карточки   -------------- */
+
+.products {
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(252, 252, 252, 0.3);
+}
+
+.products__card {
+  margin-bottom: 57px;
+}
+
+.products__footer {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 682px;
+}
+
+.products__button-more {
+  align-self: center;
+}
+
+.products__pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 420px;
+}
+
+.products__pagination-item:not(:last-child) {
+  margin-right: 13px;
+}
+
+.products__pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #2d3440;
+  line-height: 20px;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.products__pagination-link:not(span):hover {
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.products__pagination-link:focus {
+  border-color: #2d3440;
+  background-color: rgba(252, 252, 252, 0.3);
+}
+
+.products__pagination-link:focus-visible {
+  outline: none;
+}
+
+.products__pagination-link:not(span):active {
+  border-color: #fcfcfc;
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.products__pagination-link_active {
+  background-color: #fcfcfc;
+}
+
+.products__pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.products__pagination-button_prev {
+  background: url("../images/icons/pagination-arrow.svg") no-repeat 9px 50%;
+  transform: rotate(180deg);
+}
+
+.products__pagination-button_next {
+  background: url("../images/icons/pagination-arrow.svg") no-repeat 9px 50%;
+}
+
+.products__pagination-button:not(:disabled):hover {
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.products__pagination-button:not(:disabled):focus {
+  border-color: #2d3440;
+  background-color: rgba(252, 252, 252, 0.3);
+}
+
+.products__pagination-button:focus-visible {
+  outline: none;
+}
+
+.products__pagination-button:not(:disabled):active {
+  border-color: #fcfcfc;
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.products__pagination-button:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
