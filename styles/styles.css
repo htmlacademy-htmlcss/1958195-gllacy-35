@@ -220,12 +220,11 @@ body {
 }
 
 .social__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+  gap: 16px;
   flex-wrap: wrap;
-}
-
-.social__item:not(:last-child) {
-  margin-right: 16px;
+  max-width: 220px;
 }
 
 .social__link {
@@ -281,7 +280,6 @@ body {
 
 .header__wrapper {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 24px 0;
 }
@@ -430,6 +428,7 @@ body {
 }
 
 .header__tel {
+  min-width: 170px;
   margin-left: auto;
   line-height: 20px;
   font-weight: 700;
@@ -449,6 +448,7 @@ body {
 .user-menu__list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .user-menu__item {
@@ -1422,8 +1422,13 @@ body {
   padding: 48px 0;
 }
 
+.footer__social {
+  margin-left: 5px;
+}
+
 .footer__menu {
   display: flex;
+  margin-left: 142px;
 }
 
 .footer__menu-list {
@@ -1471,6 +1476,10 @@ body {
   left: -20px;
 }
 
+.footer__logo-wrapper {
+  margin-right: 14px;
+}
+
 .footer__logo {
   display: inline-flex;
   margin-bottom: 14px;
@@ -1495,7 +1504,7 @@ body {
 .footer__copyright-link {
   display: inline-flex;
   color: #2d3440;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 
 .footer__copyright-link:focus {
@@ -1504,7 +1513,7 @@ body {
   border-radius: 3px;
 }
 
-/* --------------   Футер    -------------- */
+/* --------------   Модалка    -------------- */
 
 .modal {
   position: fixed;
@@ -1653,13 +1662,23 @@ body {
   color: #2d3440;
 }
 
-.content-header__breadcrumbs-link:hover {
+.content-header__breadcrumbs-link_current {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content-header__breadcrumbs-link:not(span):hover {
+  opacity: 0.6;
 }
 
 .content-header__breadcrumbs-link:focus {
+  outline: 2px solid #2d3440;
+  border-radius: 20px;
+  outline-offset: 4px;
 }
 
-.content-header__breadcrumbs-link:active {
+.content-header__breadcrumbs-link:not(span):active {
+  opacity: 0.3;
 }
 
 /* --------------   Каталог Фильтр    -------------- */
@@ -1990,8 +2009,12 @@ body {
   max-width: 420px;
 }
 
-.products__pagination-item:not(:last-child) {
-  margin-right: 13px;
+.products__pagination-item:nth-child(1) {
+  margin-right: 12px;
+}
+
+.products__pagination-item:nth-last-child(2) {
+  margin-right: 12px;
 }
 
 .products__pagination-link {
@@ -2001,7 +2024,9 @@ body {
   text-decoration: none;
   color: #2d3440;
   line-height: 20px;
-  padding: 2px 8px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
   border: 1px solid transparent;
   border-radius: 20px;
   background-color: transparent;
@@ -2031,11 +2056,12 @@ body {
 
 .products__pagination-button {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 26px;
-  height: 26px;
+  width: 12px;
+  height: 12px;
   padding: 0;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -2043,29 +2069,25 @@ body {
 }
 
 .products__pagination-button_prev {
-  background: url("../images/icons/pagination-arrow.svg") no-repeat 9px 50%;
+  background: url("../images/icons/pagination-arrow.svg") no-repeat 50%;
   transform: rotate(180deg);
 }
 
 .products__pagination-button_next {
-  background: url("../images/icons/pagination-arrow.svg") no-repeat 9px 50%;
+  background: url("../images/icons/pagination-arrow.svg") no-repeat 50%;
 }
 
-.products__pagination-button:not(:disabled):hover {
-  background-color: rgba(252, 252, 252, 0.5);
+.products__pagination-button_next {
+  padding-right: 2px;
 }
 
-.products__pagination-button:not(:disabled):focus {
-  border-color: #2d3440;
-  background-color: rgba(252, 252, 252, 0.3);
-}
-
-.products__pagination-button:focus-visible {
-  outline: none;
-}
-
-.products__pagination-button:not(:disabled):active {
-  border-color: #fcfcfc;
+.products__pagination-button:not(:disabled):hover::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 20px;
   background-color: rgba(252, 252, 252, 0.5);
 }
 
