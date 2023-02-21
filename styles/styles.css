@@ -1896,16 +1896,17 @@ body {
 }
 
 .filter__fat-content {
-  padding: 7px 24px;
+  padding: 8px 24px;
 }
 
 .filter__toppings {
-  padding: 9px 24px;
+  padding: 10px 24px;
 }
 
 .filter__item {
   cursor: pointer;
   position: relative;
+  display: flex;
 }
 
 .filter__item:not(:last-child) {
@@ -2002,6 +2003,31 @@ body {
   outline: 2px solid #2d3440;
   outline-offset: 2px;
   border-radius: 50%;
+}
+
+.filter__input:disabled ~ .filter__label,
+.filter__input:disabled + .filter__mark {
+  cursor: default;
+}
+
+.filter__input:disabled + .filter__mark {
+  opacity: 0.5;
+}
+
+.filter__item:hover .filter__input[type="checkbox"]:disabled + .filter__mark {
+  background: url("../images/icons/checkbox.svg") no-repeat;
+}
+
+.filter__item:hover .filter__input[type="checkbox"]:checked:disabled + .filter__mark::before {
+  background: url("../images/icons/checkbox-checked.svg") no-repeat;
+}
+
+.filter__item:hover .filter__input[type="radio"]:disabled + .filter__mark {
+  border-color: #2d3440;
+}
+
+.filter__item:hover .filter__input[type="radio"]:checked:disabled + .filter__mark::before {
+  background-color: #2d3440;
 }
 
 .filter__button {
