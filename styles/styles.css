@@ -1276,6 +1276,7 @@ body {
 }
 
 .delivery__text-wrapper {
+  padding-top: 4px;
   max-width: 380px;
 }
 
@@ -1409,6 +1410,7 @@ body {
   padding: 64px;
   border-radius: 16px;
   background: #ff2f64 url("../images/bg-contacts.jpg") no-repeat;
+  background-position-y: -82px;
   background-size: cover;
 }
 
