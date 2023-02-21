@@ -38,15 +38,15 @@ body {
   margin: 0;
 }
 
-.color__pink {
+.bg-color__pink {
   background-color: #feafc3;
 }
 
-.color__blue {
+.bg-color__blue {
   background-color: #69a9ff;
 }
 
-.color__yellow {
+.bg-color__yellow {
   background-color: #fcc850;
 }
 
@@ -104,9 +104,47 @@ body {
   color: #b9b9b9;
 }
 
-.input:focus {
+.input:hover {
+  outline: 1px solid #2d3440;
+}
+
+.input:focus-visible {
   outline: 1px solid #2d3440;
   border: 1px solid #2d3440;
+}
+
+.input:active {
+  border: 1px solid #2d3440;
+}
+
+.input:disabled {
+  color: #6e737b;
+  border: 1px solid #b9b9b9;
+  background-color: #e7e7e7;
+}
+
+.input:disabled:hover {
+  color: #2d3440;
+  border: 1px solid #b9b9b9;
+  outline: none;
+  background-color: #e7e7e7;
+}
+
+.input_error {
+  border: 1px solid #ea5454;
+}
+
+.input_error:hover {
+  outline: 1px solid #ea5454;
+}
+
+.input_error:focus-visible {
+  outline: 1px solid #ea5454;
+  border: 1px solid #ea5454;
+}
+
+.input_error:active {
+  border: 1px solid #ea5454;
 }
 
 .link {
@@ -164,7 +202,7 @@ body {
   box-shadow: none;
 }
 
-.button:focus {
+.button:focus-visible {
   color: #fcfcfc;
   background-color: #feafc3;
   outline: 2px solid #2d3440;
@@ -198,7 +236,7 @@ body {
   box-shadow: none;
 }
 
-.button_white:focus {
+.button_white:focus-visible {
   background-color: rgba(252, 252, 252, 0.4);
   color: #2d3440;
   outline-color: #2d3440;
@@ -259,11 +297,11 @@ body {
   background-color: #2d3440;
 }
 
-.social__link:focus::before {
+.social__link:focus-visible::before {
   background-color: #2d3440;
 }
 
-.social__link:focus {
+.social__link:focus-visible {
   outline-color: #2d3440;
   outline-offset: 0;
 }
@@ -288,7 +326,7 @@ body {
   margin-right: 16px;
 }
 
-.logo:focus {
+.logo:focus-visible {
   outline: 2px solid #2d3440;
   outline-offset: 4px;
   border-radius: 15px;
@@ -333,7 +371,7 @@ body {
   background-color: rgba(252, 252, 252, 0.5);
 }
 
-.main-menu__link:focus {
+.main-menu__link:focus-visible {
   background-color: rgba(252, 252, 252, 0.5);
   border: 2px solid #2d3440;
   outline: none;
@@ -428,7 +466,7 @@ body {
 }
 
 .header__tel {
-  min-width: 170px;
+  min-width: 165px;
   margin-left: auto;
   line-height: 20px;
   font-weight: 700;
@@ -440,7 +478,7 @@ body {
   margin-right: 10px;
 }
 
-.header__tel:focus {
+.header__tel:focus-visible {
   border: 2px solid #2d3440;
   outline: none;
 }
@@ -490,7 +528,7 @@ body {
   background-color: rgba(252, 252, 252, 0.5);
 }
 
-.user-menu__link:focus {
+.user-menu__link:focus-visible {
   background-color: rgba(252, 252, 252, 0.5);
   border-color: #2d3440;
   outline: none;
@@ -583,7 +621,17 @@ body {
 }
 
 .cart__link:hover {
-  opacity: 0.6;
+  opacity: 0.8;
+}
+
+.cart__link:focus-visible {
+  outline: 2px solid #2d3440;
+  outline-offset: 4px;
+  border-radius: 30px;
+}
+
+.cart__link:active {
+  opacity: 0.4;
 }
 
 .cart__link {
@@ -667,6 +715,10 @@ body {
   background-color: #fcfcfc;
 }
 
+.cart__button-delete:focus-visible {
+  outline: 2px solid #2d3440;
+}
+
 .cart__button-delete:active {
   opacity: 0.3;
 }
@@ -715,8 +767,8 @@ body {
   opacity: 0.6;
 }
 
-.main-menu__link_active:focus,
-.user-menu__link_active:focus {
+.main-menu__link_active:focus-visible,
+.user-menu__link_active:focus-visible {
   border: 2px solid #000000;
   background-color: #ff4a78;
 }
@@ -838,11 +890,11 @@ body {
   color: #2d3440;
 }
 
-.slider-control-button:focus {
+.slider-control-button:focus-visible {
   background-color: rgba(252, 252, 252, 0.5);
   border-color: #2d3440;
   color: #2d3440;
-  outline: none ;
+  outline: none;
 }
 
 .slider-control-button:active {
@@ -895,7 +947,7 @@ body {
   border-color: #fcfcfc;
 }
 
-.slider__dots-link:focus {
+.slider__dots-link:focus-visible {
   border-color: #2d3440;
   outline: none;
 }
@@ -943,11 +995,11 @@ body {
 }
 
 .promo__item_raspberry {
-  background: #ff7799 url("../images/promo/raspberry.png") no-repeat 100% 100%;
+  background: #ff7799 url("../images/raspberry.png") no-repeat 100% 100%;
 }
 
 .promo__item_marshmallow {
-  background: #ff7799 url("../images/promo/marshmallow.png") no-repeat 100% 100%;
+  background: #ff7799 url("../images/marshmallow.png") no-repeat 100% 100%;
 }
 
 .promo__subtitle {
@@ -1006,7 +1058,7 @@ body {
   margin-top: -51px;
 }
 
-.card__link:focus .card__img {
+.card__link:focus-visible .card__img {
   outline: 2px solid #2d3440;
 }
 
@@ -1075,7 +1127,7 @@ body {
   color: #2d3440;
 }
 
-.popular__product-button:focus {
+.card__button:focus-visible {
   border: 2px solid #2d3440;
   outline: none;
 }
@@ -1124,19 +1176,19 @@ body {
 }
 
 .advantage__description_ice-cream {
-  background: url("../images/advantage/ice-cream.svg") no-repeat left top;
+  background: url("../images/icons/ice-cream.svg") no-repeat left top;
 }
 
 .advantage__description_beef {
-  background: url("../images/advantage/beef.svg") no-repeat left top;
+  background: url("../images/icons/beef.svg") no-repeat left top;
 }
 
 .advantage__description_leaf {
-  background: url("../images/advantage/leaf.svg") no-repeat left top;
+  background: url("../images/icons/leaf.svg") no-repeat left top;
 }
 
 .advantage__description_thermometer {
-  background: url("../images/advantage/thermometer.svg") no-repeat left top;
+  background: url("../images/icons/thermometer.svg") no-repeat left top;
 }
 
 /* --------------   блог / подписаться    -------------- */
@@ -1156,15 +1208,10 @@ body {
   text-decoration: none;
 }
 
-.blog-massage:focus {
+.blog-massage:focus-visible {
   outline: 2px solid #2d3440;
   outline-offset: 0;
 }
-
-.blog-massage:focus-visible {
-  border: none;
-}
-
 
 .blog-massage__new {
   display: inline-block;
@@ -1289,7 +1336,6 @@ body {
   display: none;
 }
 
-
 .delivery__label-group {
   display: flex;
   align-items: center;
@@ -1348,7 +1394,7 @@ body {
   display: block;
 }
 
-.tooltip__button:focus {
+.tooltip__button:focus-visible {
   outline: 2px solid #2d3440;
   border-radius: 50%;
 }
@@ -1362,7 +1408,7 @@ body {
 .contacts {
   padding: 64px;
   border-radius: 16px;
-  background: #ff2f64 url("../images/contacts/bg-contacts.jpg") no-repeat;
+  background: #ff2f64 url("../images/bg-contacts.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -1457,7 +1503,7 @@ body {
   text-underline-offset: 3px;
 }
 
-.footer__menu-link:focus {
+.footer__menu-link:focus-visible {
   outline-offset: 2px;
   outline: 2px solid #2d3440;
   border-radius: 3px;
@@ -1485,7 +1531,11 @@ body {
   margin-bottom: 14px;
 }
 
-.footer__logo:focus {
+.footer__logo:hover {
+  opacity: 0.8;
+}
+
+.footer__logo:focus-visible {
   outline-offset: 2px;
   outline: 2px solid #2d3440;
   border-radius: 3px;
@@ -1507,7 +1557,11 @@ body {
   text-underline-offset: 3px;
 }
 
-.footer__copyright-link:focus {
+.footer__copyright-link:hover {
+  opacity: 0.8;
+}
+
+.footer__copyright-link:focus-visible {
   outline-offset: 2px;
   outline: 2px solid #2d3440;
   border-radius: 3px;
@@ -1613,7 +1667,7 @@ body {
   background-color: #fcfcfc;
 }
 
-.modal__close-button:focus {
+.modal__close-button:focus-visible {
   outline: 2px solid #2d3440;
 }
 
@@ -1671,7 +1725,7 @@ body {
   opacity: 0.6;
 }
 
-.content-header__breadcrumbs-link:focus {
+.content-header__breadcrumbs-link:focus-visible {
   outline: 2px solid #2d3440;
   border-radius: 20px;
   outline-offset: 4px;
@@ -1689,7 +1743,9 @@ body {
 
 .filter__line-group {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
+  row-gap: 20px;
 }
 
 .filter__line-group:not(:last-child) {
@@ -1810,12 +1866,12 @@ body {
   background-color: #2d3440;
 }
 
-.filter__price-button:focus {
+.filter__price-button:focus-visible {
   background-color: #fcfcfc;
   outline: 2px solid #2d3440;
 }
 
-.filter__price-button:focus::before {
+.filter__price-button:focus-visible::before {
   background-color: #2d3440;
 }
 
@@ -1845,13 +1901,21 @@ body {
   padding: 9px 24px;
 }
 
+.filter__item {
+  cursor: pointer;
+  position: relative;
+}
+
 .filter__item:not(:last-child) {
   margin-right: 16px;
 }
 
-.filter__control {
+.filter__label {
+  z-index: 1;
   cursor: pointer;
   position: relative;
+  font-size: 14px;
+  line-height: 20px;
   padding-left: 24px;
 }
 
@@ -1906,35 +1970,36 @@ body {
   background: url("../images/icons/checkbox-checked.svg") no-repeat;
 }
 
-.filter__control:hover .filter__mark {
+.filter__item:hover .filter__input + .filter__mark {
   border-color: #fcfcfc;
 }
 
-.filter__control:hover .filter__input[type="radio"]:checked + .filter__mark::before {
+.filter__item:hover .filter__input[type="radio"]:checked + .filter__mark::before {
   background-color: #fcfcfc;
 }
 
-.filter__control:hover .filter__input[type="checkbox"] + .filter__mark {
+.filter__item:hover .filter__input[type="checkbox"] + .filter__mark {
   background: url("../images/icons/checkbox-white.svg") no-repeat;
 }
 
-.filter__control:hover .filter__input[type="checkbox"]:checked + .filter__mark {
+.filter__item:hover .filter__input[type="checkbox"]:checked + .filter__mark {
   background: none;
 }
 
-.filter__control:hover .filter__input[type="checkbox"]:checked + .filter__mark::before {
+.filter__item:hover .filter__input[type="checkbox"]:checked + .filter__mark::before {
   background: url("../images/icons/checkbox-checked-white.svg") no-repeat;
 }
 
-.filter__control:focus-within {
+.filter__input:focus-visible ~ .filter__mark {
   outline: 2px solid #2d3440;
   outline-offset: 2px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
-.filter__label {
-  font-size: 14px;
-  line-height: 20px;
+.filter__input[type="radio"]:focus-visible ~ .filter__mark {
+  outline: 2px solid #2d3440;
+  outline-offset: 2px;
+  border-radius: 50%;
 }
 
 .filter__button {
@@ -1959,7 +2024,7 @@ body {
   outline-color: rgba(252, 252, 252, 0.3);
 }
 
-.filter__button:focus {
+.filter__button:focus-visible {
   outline-color: #2d3440;
   background-color: rgba(252, 252, 252, 0.5);
 }
@@ -2036,12 +2101,9 @@ body {
   background-color: rgba(252, 252, 252, 0.5);
 }
 
-.products__pagination-link:focus {
+.products__pagination-link:focus-visible {
   border-color: #2d3440;
   background-color: rgba(252, 252, 252, 0.3);
-}
-
-.products__pagination-link:focus-visible {
   outline: none;
 }
 
@@ -2081,14 +2143,29 @@ body {
   padding-right: 2px;
 }
 
-.products__pagination-button:not(:disabled):hover::before {
+.products__pagination-button:not(:disabled)::before {
   content: "";
+  display: none;
   z-index: -1;
   position: absolute;
   width: 24px;
   height: 24px;
   border-radius: 20px;
   background-color: rgba(252, 252, 252, 0.5);
+}
+
+.products__pagination-button:hover::before {
+  display: block;
+}
+
+.products__pagination-button:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.products__pagination-button:focus-visible::before {
+  display: block;
+  border: 1px solid #2d3440;
 }
 
 .products__pagination-button:disabled {

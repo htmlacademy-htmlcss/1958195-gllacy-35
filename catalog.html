@@ -7,7 +7,7 @@
       <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
       <title>GllacyShop - Сливочное мороженое</title>
   </head>
-  <body class="color__pink"> <!-- классы смены фона "color__pink" (первый слайд), "color__blue" (второй слайд), "color__yellow" (третий слайд) -->
+  <body class="bg-color__pink"> <!-- классы смены фона "bg-color__pink" (первый слайд), "bg-color__blue" (второй слайд), "bg-color__yellow" (третий слайд) -->
     <header class="header header-inner">
       <div class="container">
         <div class="header__wrapper">
@@ -17,7 +17,7 @@
           <nav class="main-menu">
             <ul class="main-menu__list clear-list">
               <li class="main-menu__item">
-                <a class="main-menu__link" href="#"> <!-- main-menu__link_active - активное меню. пример, когда выпадающее меню открыто -->
+                <a class="main-menu__link" href="#"> <!-- main-menu__link_active - активное меню -->
                   Каталог
                   <svg class="main-menu__icon" width="12" height="7" viewBox="0 0 12 7" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1.80812 1.0532C1.54777 0.792853 1.12566 0.792853 0.865306 1.0532C0.604957 1.31355 0.604957 1.73566 0.865306 1.99601L5.52565 6.65636C5.52771 6.65847 5.52979 6.66058 5.53189 6.66268C5.66259 6.79337 5.83404 6.85846 6.00534 6.85794C6.1753 6.85744 6.34511 6.79236 6.47478 6.66268C6.47687 6.66059 6.47894 6.6585 6.48099 6.65639L11.1414 1.99601C11.4017 1.73566 11.4017 1.31355 11.1414 1.0532C10.881 0.792853 10.4589 0.792853 10.1986 1.0532L6.00334 5.24842L1.80812 1.0532Z"/>
@@ -34,7 +34,7 @@
                     <a class="drop-menu__link" href="#">Щербеты</a>
                   </li>
                   <li class="drop-menu__item">
-                    <a class="drop-menu__link" href="#">Фруктовый лед</a> <!-- drop-menu__link_active - активное меню. пример, когда мы находимся в этом разделе -->
+                    <a class="drop-menu__link" href="#">Фруктовый лед</a> <!-- drop-menu__link_active - активное меню -->
                   </li>
                   <li class="drop-menu__item">
                     <a class="drop-menu__link" href="#">Мелорин</a>
@@ -131,10 +131,6 @@
                     <span class="cart__total-price">Итого: 790 ₽</span>
                   </div>
                 </div>
-                <!-- Сообщение пустой корзины cart__empty_active -->
-                <!-- <div class="cart cart__empty">
-                  <h2 class="cart__title subtitle">Ваша&nbsp;корзина&nbsp;пока пуста</h2>
-                </div> -->
               </li>
             </ul>
           </nav>
@@ -192,32 +188,24 @@
                 <div class="filter__wrapper filter__fat-content">
                   <ul class="filter__list clear-list">
                     <li class="filter__item">
-                      <label class="filter__control">
-                        <input class="filter__input visually-hidden" type="radio" name="fat-content" value="0%">
-                        <span class="filter__mark"></span>
-                        <span class="filter__label">0%</span>
-                      </label>
+                      <label class="filter__label" for="fat-zero">0%</label>
+                      <input class="filter__input visually-hidden" type="radio" id="fat-zero" name="fat-content" value="0%">
+                      <span class="filter__mark"></span>
                     </li>
                     <li class="filter__item">
-                      <label class="filter__control">
-                        <input class="filter__input visually-hidden" type="radio" name="fat-content" value="10%" checked>
-                        <span class="filter__mark"></span>
-                        <span class="filter__label">до 10%</span>
-                      </label>
+                      <label class="filter__label" for="fat-ten">до 10%</label>
+                      <input class="filter__input visually-hidden" type="radio" id="fat-ten" name="fat-content" value="10%" checked>
+                      <span class="filter__mark"></span>
                     </li>
                     <li class="filter__item">
-                      <label class="filter__control">
-                        <input class="filter__input visually-hidden" type="radio" name="fat-content" value="up-to-30%">
-                        <span class="filter__mark"></span>
-                        <span class="filter__label">до 30%</span>
-                      </label>
+                      <label class="filter__label" for="fat-thirty">до 30%</label>
+                      <input class="filter__input visually-hidden" type="radio" id="fat-thirty" name="fat-content" value="up-to-30%">
+                      <span class="filter__mark"></span>
                     </li>
                     <li class="filter__item">
-                      <label class="filter__control">
-                        <input class="filter__input visually-hidden" type="radio" name="fat-content" value="above-30%">
-                        <span class="filter__mark"></span>
-                        <span class="filter__label">выше 30%</span>
-                      </label>
+                      <label class="filter__label" for="fat-over-thirty">выше 30%</label>
+                      <input class="filter__input visually-hidden" type="radio" id="fat-over-thirty" name="fat-content" value="above-30%">
+                      <span class="filter__mark"></span>
                     </li>
                   </ul>
                 </div>
@@ -229,39 +217,29 @@
                 <div class="filter__wrapper filter__toppings">
                 <ul class="filter__list clear-list">
                   <li class="filter__item">
-                    <label class="filter__control">
-                      <input class="filter__input visually-hidden" type="checkbox" name="chocolate" checked>
-                      <span class="filter__mark"></span>
-                      <span class="filter__label">шоколадные</span>
-                    </label>
+                    <label class="filter__label" for="chocolate">шоколадные</label>
+                    <input class="filter__input visually-hidden" type="checkbox" id="chocolate" name="chocolate" checked>
+                    <span class="filter__mark"></span>
                   </li>
                   <li class="filter__item">
-                    <label class="filter__control">
-                      <input class="filter__input visually-hidden" type="checkbox" name="sugar-sprinkles" checked>
-                      <span class="filter__mark"></span>
-                      <span class="filter__label">сахарные посыпки</span>
-                    </label>
+                    <label class="filter__label" for="sugar-sprinkles">сахарные посыпки</label>
+                    <input class="filter__input visually-hidden" type="checkbox" id="sugar-sprinkles" name="sugar-sprinkles" checked>
+                    <span class="filter__mark"></span>
                   </li>
                   <li class="filter__item">
-                    <label class="filter__control">
-                      <input class="filter__input visually-hidden" type="checkbox" name="fruits">
-                      <span class="filter__mark"></span>
-                      <span class="filter__label">фрукты</span>
-                    </label>
+                    <label class="filter__label" for="fruits">фрукты</label>
+                    <input class="filter__input visually-hidden" type="checkbox" id="fruits" name="fruits">
+                    <span class="filter__mark"></span>
                   </li>
                   <li class="filter__item">
-                    <label class="filter__control">
-                      <input class="filter__input visually-hidden" type="checkbox" name="syrups">
-                      <span class="filter__mark"></span>
-                      <span class="filter__label">сиропы</span>
-                    </label>
+                    <label class="filter__label" for="syrups">сиропы</label>
+                    <input class="filter__input visually-hidden" type="checkbox" id="syrups" name="syrups">
+                    <span class="filter__mark"></span>
                   </li>
                   <li class="filter__item">
-                    <label class="filter__control">
-                      <input class="filter__input visually-hidden" type="checkbox" name="jams">
-                      <span class="filter__mark"></span>
-                      <span class="filter__label">джемы</span>
-                    </label>
+                    <label class="filter__label" for="jams">джемы</label>
+                    <input class="filter__input visually-hidden" type="checkbox" id="jams" name="jams">
+                    <span class="filter__mark"></span>
                   </li>
                 </ul>
                 </div>
@@ -469,7 +447,7 @@
             <a class="products__button-more button button_white" href="#">Показать ещё</a>
             <ul class="products__pagination-list clear-list">
               <li class="products__pagination-item">
-                <button class="products__pagination-button products__pagination-button_prev">
+                <button class="products__pagination-button products__pagination-button_prev" disabled>
                   <span class="visually-hidden">Предыдущая страница</span>
                 </button>
               </li>
@@ -549,7 +527,7 @@
             </ul>
           </div>
           <div class="footer__logo-wrapper">
-            <a href="https://htmlacademy.ru/" class="footer__logo">
+            <a class="footer__logo" href="https://htmlacademy.ru/">
               <img class="footer__logo-img" width="93" height="27" src="/images/logo_htmlacademy.svg" alt="Логотип html-academy - Интерактивные обучающие технологии.">
             </a>
             <p class="footer__copyright">
