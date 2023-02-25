@@ -338,7 +338,7 @@ body {
 
 .main-menu {
   margin-right: 36px;
-  min-width: 200px;
+  min-width: 430px;
 }
 
 .main-menu__list {
@@ -491,7 +491,7 @@ body {
 }
 
 .user-menu {
-  min-width: 152px;
+  min-width: 266px;
 }
 
 .user-menu__list {
